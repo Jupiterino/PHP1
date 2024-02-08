@@ -33,7 +33,7 @@
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-        echo "<h1>CONNESSIONE SUCCESFULLATA</h1>";
+        
 
         $id = $_POST['id'];
         $voto = $_POST['voto'];
@@ -41,7 +41,12 @@
         $sql = "UPDATE recensioni SET recensioni.Voto=$voto WHERE recensioni.IDRecensione=$id";
 
         if ($conn->query($sql)) {
-            echo "<h3>VOTO AGGIORNATO CORRETTAMENTE</h3>";
+            if($conn->affected_rows == 0){
+                echo "<h3>VOTO NON TROVATO</h3>";
+            }else{
+                echo "<h3>VOTO AGGIORNATO CORRETTAMENTE</h3>";
+            }
+            
         }
         else {
             echo "Error creating database: " . mysqli_error($conn);

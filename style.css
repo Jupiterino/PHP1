@@ -16,7 +16,10 @@
   .sss {
     padding: 0.01%;
   }
-  input {
-    background-color: rgb(70, 70, 70);
+  .form-control {
+    background-color: rgb(183, 187, 194);
+    border-radius: 0.9px;
+ 
+    
   }
   

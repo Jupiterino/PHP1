@@ -28,7 +28,7 @@
       if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
       }
-      echo "<h1>CONNESSIONE SUCCESFULLATA</h1>";
+
 
       $codpro = $_POST['codpro'];
 
@@ -38,7 +38,11 @@
         "DELETE FROM proiezioni WHERE proiezioni.CodProiezione = $codpro";
 
       if ($conn->query($sql)) {
-        echo "<h3>PROIEZIONE ELIMINATA CORRETTAMENTE</h3>";
+        if($conn->affected_rows == 0){
+          echo "<h3>PROIEZIONE NON TROVATA</h3>";
+      }else{
+          echo "<h3>PROIEZIONE ELIMINATA CORRETTAMENTE</h3>";
+      }
       }
       else {
         echo "<h1>ERRORE </h1>" . mysqli_error($conn);
