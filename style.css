@@ -1,0 +1,22 @@
+.scatola {
+    background-image: url("imgù.jpg");
+    border-radius: 10px;
+    height: 100%;
+  
+    box-shadow: 0 0 25px #0f0f0f;
+  }
+  
+  h1 {
+    color: rgb(231, 231, 231);
+  }
+  
+  label {
+    color: rgb(204, 204, 204);
+  }
+  .sss {
+    padding: 0.01%;
+  }
+  input {
+    background-color: rgb(70, 70, 70);
+  }
+  
